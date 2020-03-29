@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es_MX">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Water effect - Bitquark</title>
+    <link rel="stylesheet" href="./app.css" />
+    <link
+      rel="shortcut icon"
+      href="https://firebasestorage.googleapis.com/v0/b/bitquark-mailer.appspot.com/o/bitquark%2FFoto-de-perfil-400x400.png?alt=media&token=c9f177cf-e8bd-4c4c-b167-c83bc45a609c"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div class="background">
+      <div class="water"></div>
+    </div>
+    <svg>
+      <filter id="turbulence" x="0" y="0" width="100%" height="100%">
+        <feTurbulence
+          id="sea-filter"
+          numOctaves="1"
+          seed="2"
+          baseFrequency="0.08 0.08"
+        ></feTurbulence>
+        <feDisplacementMap scale="10" in="SourceGraphic"></feDisplacementMap>
+        <animate
+          xlink:href="#sea-filter"
+          attributeName="baseFrequency"
+          dur="60s"
+          keyTimes="0;0.5;1"
+          values="0.02 0.06;0.04 0.08;0.02 0.06"
+          repeatCount="indefinite"
+        />
+      </filter>
+    </svg>
+  </body>
+</html>
